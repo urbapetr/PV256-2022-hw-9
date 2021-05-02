@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">HW9</string>
+    <string name="status">(%s)</string>
+    <string name="gender">Gender: %s</string>
+    <string name="species">Species: %s</string>
+    <string name="no_data">No Data</string>
+    <string name="cannot_load">Couldn\'t get fresh data:(</string>
+</resources>
