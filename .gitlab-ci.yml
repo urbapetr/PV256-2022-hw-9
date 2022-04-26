@@ -1,4 +1,4 @@
-image: android-docker:latest
+image: gitlab.fi.muni.cz:5050/grp-pv256/android-docker:latest
 
 cache:
   paths:
