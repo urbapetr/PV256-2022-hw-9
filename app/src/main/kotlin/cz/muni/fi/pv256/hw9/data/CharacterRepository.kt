@@ -15,8 +15,13 @@ class CharacterRepository(context: Context) {
     private val characterDao = MortyDatabase.getInstance(context).characterDao()
 
     fun getCharacter(id: Int) = liveData {
-        // TODO implement: get data from DB and perform entity refresh from Internet
-
+        val character = ApiService.apiService.getCharacter(id)
+        characterDao.insertAll(character)
+        emitSource(
+            characterDao.getById(id).map {
+                it
+            }
+        )
         // Underlying DetailActivity doesn't work with Result, so there's no need to wrap
         // returned LiveData into another object
         // therefore, emitSource() should be called just once
