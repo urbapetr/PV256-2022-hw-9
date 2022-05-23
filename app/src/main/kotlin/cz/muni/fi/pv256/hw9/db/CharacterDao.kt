@@ -13,7 +13,7 @@ interface CharacterDao {
     @Query("SELECT * FROM character")
     fun getAll(): LiveData<List<Character>>
 
-    @Query("SELECT * FROM character WHERE id LIKE :id")
+    @Query("SELECT * FROM character WHERE id = :id")
     fun getById(id: Int): LiveData<Character>
 
     @Insert(onConflict = REPLACE)

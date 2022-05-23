@@ -18,9 +18,7 @@ class CharacterRepository(context: Context) {
         val character = ApiService.apiService.getCharacter(id)
         characterDao.insertAll(character)
         emitSource(
-            characterDao.getById(id).map {
-                it
-            }
+            characterDao.getById(id)
         )
         // Underlying DetailActivity doesn't work with Result, so there's no need to wrap
         // returned LiveData into another object
